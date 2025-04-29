@@ -12,7 +12,7 @@ const SignupPage = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", form);
+      await axios.post("https://task-tracker-backend-1-7vae.onrender.com/api/auth/signup", form);
       navigate("/");
     } catch (error) {
       console.error("Signup error:", error);

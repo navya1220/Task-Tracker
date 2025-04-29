@@ -32,13 +32,13 @@ const ProjectDetails = () => {
     try {
       setLoading(true);
 
-      const projectRes = await axios.get(`http://localhost:5000/api/projects`, {
+      const projectRes = await axios.get(`https://task-tracker-backend-1-7vae.onrender.com/api/projects`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setProjectTitle(projectRes.data.title);
 
 
-      const tasksRes = await axios.get(`http://localhost:5000/api/tasks/${id}`, {
+      const tasksRes = await axios.get(`https://task-tracker-backend-1-7vae.onrender.com/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setTasks(tasksRes.data);
@@ -73,7 +73,7 @@ const ProjectDetails = () => {
       
       // Wait for animation to complete
       setTimeout(async () => {
-        await axios.delete(`http://localhost:5000/api/tasks/task/${taskToDelete}`, {
+        await axios.delete(`https://task-tracker-backend-1-7vae.onrender.com/api/tasks/task/${taskToDelete}`, {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         
@@ -104,7 +104,7 @@ const ProjectDetails = () => {
       ));
       
       // Then update in the backend
-      await axios.patch(`http://localhost:5000/api/tasks/task/${taskId}`, updatedTask, {
+      await axios.patch(`https://task-tracker-backend-1-7vae.onrender.com/api/tasks/task/${taskId}`, updatedTask, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       
@@ -140,7 +140,7 @@ const ProjectDetails = () => {
   const handleEditSubmit = async (taskId) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/tasks/task/${taskId}`,
+        `https://task-tracker-backend-1-7vae.onrender.com/api/tasks/task/${taskId}`,
         editFormData,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

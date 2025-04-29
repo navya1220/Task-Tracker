@@ -12,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/projects", {
+        const res = await axios.get("https://task-tracker-backend-1-7vae.onrender.com/api/projects", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setProjects(res.data);

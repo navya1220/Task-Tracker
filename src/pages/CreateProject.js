@@ -14,7 +14,7 @@ const CreateProject = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/projects", { title }, {
+      await axios.post("https://task-tracker-backend-1-7vae.onrender.com/api/projects", { title }, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       navigate("/dashboard");
