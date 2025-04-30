@@ -54,18 +54,6 @@ const CreateTask = () => {
                 required
               />
             </div>
-            <div className="form-group">
-              <label className="form-label">Status</label>
-              <select 
-                className="form-select" 
-                value={task.status}
-                onChange={(e) => setTask({ ...task, status: e.target.value })}
-              >
-                <option value="Pending">Pending</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Completed">Completed</option>
-              </select>
-            </div>
             <button 
               type="submit" 
               className="btn btn-primary btn-block"
